@@ -40,6 +40,14 @@ export default [
                 component: './Mine',
                 title: '我的',
             },
+            {
+                path: '/exception',
+                component: '../layouts/ExceptionLayout',
+                routes: [
+                    { path: '/exception/403', component: './Exception/403', title: '没有权限' },
+                    { path: '/exception/500', component: './Exception/500', title: '服务器出错了' },
+                ],
+            },
             { component: '404', title: '页面未找到' },
         ],
     },
