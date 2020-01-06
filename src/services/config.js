@@ -1,22 +1,45 @@
 const config = {
     dev: {
-        apiDomain: 'localhost:8000',
+        apiDomain: 'http://localhost:8000',
         apiPath: '/api',
     },
     reporter: {
-        apiDomain: 'localhost:8000',
+        apiDomain: 'http://localhost:8000',
         apiPath: '/api',
     },
     prod: {
-        apiDomain: 'localhost:8000',
+        apiDomain: 'http://localhost:8000',
         apiPath: '/api',
     },
 };
 
-const common = {
+let common = {
     localCacheAlias: {
         token: '@@token',
     },
     localCacheTime: 1000 * 3600 * 24 * 30,
 };
-export default Object.freeze({ ...config, ...common });
+
+let env = '';
+
+if (process.env.NODE_ENV === 'production') {
+    env = 'prod';
+    common = {
+        ...common,
+        wechatServer: 'https://xxx.wechat.xxxx.cn',
+    };
+} else if (process.env.NODE_ENV === 'reporter') {
+    env = 'reporter';
+} else {
+    env = 'dev';
+}
+
+if (process.env.REPORTER === 'reporter') {
+    env = 'reporter';
+    common = {
+        ...common,
+        wechatServer: 'https://xxx.wechat.xxxx.cn',
+    };
+}
+
+export default Object.freeze({ ...config[env], ...common });

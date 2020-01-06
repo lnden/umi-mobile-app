@@ -1,4 +1,17 @@
-import { isString, isArray } from './verify';
+import config from '../services/config';
+import { getCache } from './cookies';
+import { isString, isArray, isObject } from './verify';
+
+/**
+ * 创建标准的action
+ * 柯里化
+ * @param type
+ * @return {function(*): {type: *, payload: *}}
+ */
+export const createAction = type => payload => ({
+    type,
+    payload,
+});
 
 /**
  * 逐级从state中取值
@@ -56,3 +69,58 @@ export const loadingSelector = types => {
     }
     throw new Error('传入的参数错误');
 };
+
+/**
+ * 获取API的header上权限值
+ *
+ * @return {object}
+ */
+export const getAPIAuthHeader = () => {
+    const token = getCache({
+        key: config.localCacheAlias.token,
+        type: 1,
+    });
+
+    if (!token) {
+        return {};
+    }
+    return {
+        authorization: token,
+    };
+};
+
+/**
+ * Serialize an object to query string:
+ *
+ * obj2str({ singlepage: 1, b: 2 }) => 'singlepage=1&b=2'
+ *
+ * @param {object} obj
+ * @returns {string}
+ */
+export const obj2str = obj => {
+    if (!isObject(obj)) {
+        return '';
+    }
+
+    return Object.getOwnPropertyNames(obj)
+        .map(key => {
+            if (obj[key] === undefined) {
+                return `${encodeURIComponent(key)}=`;
+            }
+            return `${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`;
+        })
+        .join('&');
+};
+
+let delayTimeout = null;
+/* eslint compat/compat:0 */
+export const delay = (timeout = 1000) =>
+    new Promise(resolve => {
+        delayTimeout = setTimeout(() => {
+            if (delayTimeout) {
+                clearTimeout(delayTimeout);
+                delayTimeout = null;
+            }
+            resolve();
+        }, timeout);
+    });

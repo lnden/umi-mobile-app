@@ -9,4 +9,11 @@ export default {
         status: 200000,
         message: '请求成功',
     },
+    '/api/logout': {
+        data: {
+            flag: true,
+        },
+        status: 200000,
+        message: '请求成功',
+    },
 };

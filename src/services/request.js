@@ -2,7 +2,7 @@ import fetch from 'dva/fetch';
 import hash from 'hash.js';
 import router from 'umi/router';
 import config from './config';
-import { getAPIAuthHeader, obj2str } from '@/utils/utils';
+import { getAPIAuthHeader, obj2str } from '@/utils';
 
 // const codeMessage = {
 //     200: '服务器成功返回请求的数据。',
@@ -26,7 +26,7 @@ export const getAPIUrl = (url, type) => {
     if (type === 'wechat') {
         return `${config.wechatServer}${config.apiPath}/v1${url}`;
     }
-    return `${config.apiDomain}${config.apiPath}/v1${url}`;
+    return `${config.apiDomain}${config.apiPath}/${url}`;
 };
 
 export const checkStatus = response => {
