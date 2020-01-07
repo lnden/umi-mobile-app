@@ -11,7 +11,8 @@ class Message extends Component {
     render() {
         return (
             <div>
-                <PublicHeader headParam={{ title: '消息', isBack: false }} />
+                <PublicHeader title="消息" />
+
                 <WhiteSpace />
                 <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}>
                     Notice: The arrival time of incomes and transfers of Yu &#39;E Bao will be

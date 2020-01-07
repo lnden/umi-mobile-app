@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { createSelector } from 'reselect';
-import { WingBlank, WhiteSpace, InputItem, Button, Toast } from 'antd-mobile';
+import { Flex, WingBlank, WhiteSpace, InputItem, Button, Toast } from 'antd-mobile';
 import { createForm } from 'rc-form';
+import router from 'umi/router';
 
 import { createAction, loadingSelector } from '@/utils';
 import logo from '@/assets/logo.svg';
 import styles from './index.less';
+
+const FlexItem = Flex.Item;
 
 @connect(
     createSelector(loadingSelector('login/login'), loginLoading => ({
@@ -24,11 +27,17 @@ class Login extends Component {
         }
     };
 
+    handleClickRegister = () => {
+        router.push('/user/register');
+    };
+
     render() {
         const {
             form: { getFieldProps },
             loading,
+            form,
         } = this.props;
+        const { account, password } = form.getFieldsValue();
         return (
             <WingBlank size="lg">
                 <div className={styles.wrapper}>
@@ -37,13 +46,27 @@ class Login extends Component {
                 <InputItem {...getFieldProps('account')} type="phone" placeholder="请输入手机号">
                     用户名
                 </InputItem>
-                <InputItem {...getFieldProps('password')} type="password" placeholder="****">
+                <InputItem {...getFieldProps('password')} type="password" placeholder="******">
                     密&emsp;码
                 </InputItem>
                 <WhiteSpace size="xl" />
-                <Button onClick={this.handleSubmit} type="primary" loading={loading}>
-                    登录
-                </Button>
+                <Flex>
+                    <FlexItem>
+                        <Button type="primary" onClick={this.handleClickRegister}>
+                            注册
+                        </Button>
+                    </FlexItem>
+                    <FlexItem>
+                        <Button
+                            onClick={this.handleSubmit}
+                            type="primary"
+                            loading={loading}
+                            disabled={!(account?.length === 13 && password)}
+                        >
+                            登录
+                        </Button>
+                    </FlexItem>
+                </Flex>
             </WingBlank>
         );
     }

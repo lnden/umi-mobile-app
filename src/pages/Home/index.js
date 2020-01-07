@@ -23,7 +23,7 @@ class Home extends Component {
         const { data } = this.state;
         return (
             <div>
-                <PublicHeader headParam={{ title: '首页', isBack: false }} />
+                <PublicHeader title="首页" />
                 <WingBlank>
                     <CustomCarousel resourceList={data} />
                     <WhiteSpace />

@@ -23,7 +23,7 @@ class Mine extends Component {
         const isLogin = true;
         return (
             <div className={styles.mineWrapper}>
-                <PublicHeader headParam={{ title: '我的', isBack: false }} />
+                <PublicHeader title="我的" />
                 <WingBlank>
                     {isLogin && (
                         <Button

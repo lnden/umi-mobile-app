@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { NavBar, Icon } from 'antd-mobile';
 import router from 'umi/router';
+import PropTypes from 'prop-types';
 
 import BizIcon from '@/components/BizIcon';
 import styles from './index.less';
@@ -17,9 +18,7 @@ class PublicHeader extends PureComponent {
     };
 
     render() {
-        const {
-            headParam: { title, isBack },
-        } = this.props;
+        const { title, isBack } = this.props;
         const region = undefined; // 全国
         const renderIcon = () => {
             return region ? (
@@ -37,7 +36,7 @@ class PublicHeader extends PureComponent {
             <NavBar
                 mode="light"
                 icon={
-                    isBack ? <Icon value="1" type="left" color="#333333" size="md" /> : renderIcon()
+                    isBack ? <Icon value="1" type="left" color="#333333" size="lg" /> : renderIcon()
                 }
                 onLeftClick={e => this.handleClick(e)}
             >
@@ -47,4 +46,12 @@ class PublicHeader extends PureComponent {
     }
 }
 
+PublicHeader.defaultProps = {
+    title: 'umi-mobile-app',
+    isBack: false,
+};
+PublicHeader.propTyes = {
+    title: PropTypes.string,
+    isBack: PropTypes.bool,
+};
 export default PublicHeader;

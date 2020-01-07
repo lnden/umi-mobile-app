@@ -6,7 +6,7 @@ class Discover extends Component {
     render() {
         return (
             <div>
-                <PublicHeader headParam={{ title: '我的', isBack: false }} />
+                <PublicHeader title="我的" />
                 <div>发现页面</div>
             </div>
         );
