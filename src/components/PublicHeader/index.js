@@ -50,7 +50,7 @@ PublicHeader.defaultProps = {
     title: 'umi-mobile-app',
     isBack: false,
 };
-PublicHeader.propTyes = {
+PublicHeader.propTypes = {
     title: PropTypes.string,
     isBack: PropTypes.bool,
 };

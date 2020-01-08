@@ -63,7 +63,7 @@ MenuBar.defaultProps = {
     children: null,
     pathname: '/',
 };
-MenuBar.propTyes = {
+MenuBar.propTypes = {
     children: PropTypes.node,
     pathname: PropTypes.string,
 };
