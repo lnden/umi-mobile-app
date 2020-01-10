@@ -8,14 +8,14 @@ import { createAction, loadingSelector } from '@/utils';
 import styles from './index.less';
 
 @connect(
-    createSelector(loadingSelector('login/logout'), loginLoading => ({
+    createSelector(loadingSelector('global/logout'), loginLoading => ({
         loading: loginLoading,
     })),
 )
 class Mine extends Component {
     handleLogout = () => {
         const { dispatch } = this.props;
-        dispatch(createAction('login/logout')());
+        dispatch(createAction('global/logout')());
     };
 
     render() {

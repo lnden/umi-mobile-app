@@ -96,7 +96,7 @@ class Register extends Component {
         ];
         return (
             <div>
-                <PublicHeader title="用户注册" />
+                <PublicHeader title="用户注册" isBack />
                 <WingBlank>
                     <List renderHeader={() => '个人信息'}>
                         <InputItem {...getFieldProps('account')} placeholder="请输入用户名">
