@@ -41,6 +41,11 @@ export default [
                 title: '我的',
             },
             {
+                path: '/mine/seeting',
+                component: './Mine/Seeting',
+                title: '设置',
+            },
+            {
                 path: '/exception',
                 component: '../layouts/ExceptionLayout',
                 routes: [

@@ -17,8 +17,19 @@ class PublicHeader extends PureComponent {
         }
     };
 
+    handleClickRight = e => {
+        const innerHtml = e.target.innerHTML;
+        switch (innerHtml) {
+            case '设置':
+                router.push('/mine/seeting');
+                break;
+            default:
+                break;
+        }
+    };
+
     render() {
-        const { title, isBack } = this.props;
+        const { title, isBack, rightName } = this.props;
         const region = undefined; // 全国
         const renderIcon = () => {
             return region ? (
@@ -36,9 +47,18 @@ class PublicHeader extends PureComponent {
             <NavBar
                 mode="light"
                 icon={
-                    isBack ? <Icon value="1" type="left" color="#333333" size="lg" /> : renderIcon()
+                    isBack ? (
+                        <Icon value="1" type="left" className={styles.icons} size="lg" />
+                    ) : (
+                        renderIcon()
+                    )
                 }
                 onLeftClick={e => this.handleClick(e)}
+                rightContent={[
+                    <span key="0" onClick={this.handleClickRight}>
+                        {rightName}
+                    </span>,
+                ]}
             >
                 {title}
             </NavBar>
@@ -49,9 +69,11 @@ class PublicHeader extends PureComponent {
 PublicHeader.defaultProps = {
     title: 'umi-mobile-app',
     isBack: false,
+    rightName: '',
 };
 PublicHeader.propTypes = {
     title: PropTypes.string,
     isBack: PropTypes.bool,
+    rightName: PropTypes.string,
 };
 export default PublicHeader;

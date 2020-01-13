@@ -1,42 +1,42 @@
 import React, { Component } from 'react';
-import { connect } from 'dva';
-import { createSelector } from 'reselect';
-import { WingBlank, Button } from 'antd-mobile';
+import { WhiteSpace, List } from 'antd-mobile';
 
 import PublicHeader from '@/components/PublicHeader';
-import { createAction, loadingSelector } from '@/utils';
-import styles from './index.less';
+import ListMap from './map';
+import './index.less';
 
-@connect(
-    createSelector(loadingSelector('global/logout'), loginLoading => ({
-        loading: loginLoading,
-    })),
-)
+const ListItem = List.Item;
+
 class Mine extends Component {
-    handleLogout = () => {
-        const { dispatch } = this.props;
-        dispatch(createAction('global/logout')());
+    handleClick = url => {
+        // console.log(url);
+    };
+
+    renderItem = list => {
+        return list.map(item => (
+            <ListItem
+                thumb={item.thumb}
+                extra={item.extra}
+                arrow={item.arrow}
+                onClick={() => this.handleClick(item.url)}
+                key={item.id}
+            >
+                {item.content}
+            </ListItem>
+        ));
     };
 
     render() {
-        const { loading } = this.props;
-        const isLogin = true;
         return (
-            <div className={styles.mineWrapper}>
-                <PublicHeader title="我的" />
-                <WingBlank>
-                    {isLogin && (
-                        <Button
-                            className={styles.logout}
-                            type="primary"
-                            onClick={this.handleLogout}
-                            loading={loading}
-                        >
-                            退出登录
-                        </Button>
-                    )}
-                    <div>我的页面</div>
-                </WingBlank>
+            <div>
+                <PublicHeader title="我的" rightName="设置" />
+                <List>{this.renderItem(ListMap.member)}</List>
+                <WhiteSpace />
+                <List>{this.renderItem(ListMap.major)}</List>
+                <WhiteSpace />
+                <List>{this.renderItem(ListMap.credit)}</List>
+                <WhiteSpace />
+                <List>{this.renderItem(ListMap.service)}</List>
             </div>
         );
     }
