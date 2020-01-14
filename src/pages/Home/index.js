@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { WingBlank, WhiteSpace, Button } from 'antd-mobile';
 
-import PublicHeader from '@/components/PublicHeader';
 import CustomCarousel from '@/components/CustomCarousel';
+import HeaderBar from './HeaderBar';
 
 class Home extends Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class Home extends Component {
         const { data } = this.state;
         return (
             <div>
-                <PublicHeader title="首页" />
+                <HeaderBar title="首页" />
                 <WingBlank>
                     <CustomCarousel resourceList={data} />
                     <WhiteSpace />

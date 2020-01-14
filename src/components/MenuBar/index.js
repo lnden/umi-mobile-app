@@ -18,18 +18,21 @@ const tabBarData = [
         icon: 'discover',
         selectedIcon: 'discover',
         link: '/discover',
+        badge: 'new',
     },
     {
         title: '消息',
         icon: 'message',
         selectedIcon: 'message',
         link: '/message',
+        badge: '6',
     },
     {
         title: '我的',
         icon: 'mine',
         selectedIcon: 'mine',
         link: '/mine',
+        dot: true,
     },
 ];
 
@@ -38,7 +41,7 @@ class MenuBar extends PureComponent {
         const { pathname, children } = this.props;
         return (
             <TabBar>
-                {tabBarData.map(({ title, icon, selectedIcon, link }) => (
+                {tabBarData.map(({ title, icon, selectedIcon, link, badge, dot }) => (
                     <TabBarItem
                         key={link}
                         title={title}
@@ -46,6 +49,8 @@ class MenuBar extends PureComponent {
                         selectedIcon={
                             <BizIcon type={selectedIcon} styles={{ fontSize: '0.36rem' }} />
                         }
+                        dot={dot}
+                        badge={badge}
                         selected={pathname === link}
                         onPress={() => {
                             return Router.push(`${link}`);
