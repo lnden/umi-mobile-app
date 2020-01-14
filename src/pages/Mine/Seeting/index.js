@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { WhiteSpace, List, Toast } from 'antd-mobile';
 import { connect } from 'dva';
 import { createSelector } from 'reselect';
+import router from 'umi/router';
 
 import { createAction, loadingSelector } from '@/utils';
 import PublicHeader from '@/components/PublicHeader';
@@ -27,6 +28,8 @@ class Seeting extends PureComponent {
         if (!url) {
             const { dispatch } = this.props;
             dispatch(createAction('global/logout')());
+        } else {
+            router.push(url);
         }
     };
 

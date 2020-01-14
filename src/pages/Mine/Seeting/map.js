@@ -30,7 +30,7 @@ const Map = {
             thumb: '',
             arrow: 'horizontal',
             extra: '',
-            url: 'http://wwww.baidu.com',
+            url: '/mine/seeting/comm',
             content: '通用',
             id: 1,
         },
