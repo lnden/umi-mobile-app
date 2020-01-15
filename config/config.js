@@ -13,6 +13,11 @@ export default {
                 dva: {
                     immer: true,
                 },
+                locale: {
+                    enable: true,
+                    default: 'zh-CN',
+                    baseNavigator: true,
+                },
                 dynamicImport: {
                     loadingComponent: './components/PageLoading/index',
                     webpackChunkName: false,
