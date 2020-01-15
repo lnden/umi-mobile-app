@@ -3,6 +3,7 @@ import { WhiteSpace, List, Toast } from 'antd-mobile';
 import { connect } from 'dva';
 import { createSelector } from 'reselect';
 import router from 'umi/router';
+import { formatMessage } from 'umi/locale';
 
 import { createAction, loadingSelector } from '@/utils';
 import PublicHeader from '@/components/PublicHeader';
@@ -15,7 +16,7 @@ const ListItem = List.Item;
         loading: loginLoading,
     })),
 )
-class Seeting extends PureComponent {
+class Setting extends PureComponent {
     componentDidUpdate() {
         const { loading } = this.props;
         loading &&
@@ -50,7 +51,7 @@ class Seeting extends PureComponent {
     render() {
         return (
             <div>
-                <PublicHeader title="设置" isBack />
+                <PublicHeader title={formatMessage({ id: 'mine.settings' })} isBack />
                 <WhiteSpace size="xl" />
                 <List>{this.renderItem(ListMap.member)}</List>
                 <WhiteSpace size="xl" />
@@ -64,4 +65,4 @@ class Seeting extends PureComponent {
     }
 }
 
-export default Seeting;
+export default Setting;

@@ -1,3 +1,5 @@
+import { formatMessage } from 'umi/locale';
+
 import mineMember from '@/assets/mine-member.svg';
 import mineShanghu from '@/assets/mine-shanghu.svg';
 
@@ -7,7 +9,7 @@ import mineYue from '@/assets/mine-yue.svg';
 import mineYuebao from '@/assets/mine-yuebao.svg';
 import mineHuabei from '@/assets/mine-huabei.svg';
 import mineYulibao from '@/assets/mine-yulibao.svg';
-import mineHhuankuan from '@/assets/mine-huankuan.svg';
+import mineHuankuan from '@/assets/mine-huankuan.svg';
 
 import mineZhima from '@/assets/mine-zhima.svg';
 import minInsurance from '@/assets/mine-insurance.svg';
@@ -24,7 +26,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '2个积分待领取',
             url: 'http://wwww.baidu.com',
-            content: '支付宝会员',
+            content: formatMessage({ id: 'mine.membership' }),
             id: 0,
         },
         {
@@ -32,7 +34,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '今日收入200.00元',
             url: 'http://wwww.baidu.com',
-            content: '商家服务',
+            content: formatMessage({ id: 'mine.merchant' }),
             id: 1,
         },
     ],
@@ -42,7 +44,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '账单',
+            content: formatMessage({ id: 'mine.transactions' }),
             id: 2,
         },
         {
@@ -50,7 +52,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '账户安全保障中',
             url: 'http://wwww.baidu.com',
-            content: '总资产',
+            content: formatMessage({ id: 'mine.totalassets' }),
             id: 3,
         },
         {
@@ -58,7 +60,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '0.00元',
             url: 'http://wwww.baidu.com',
-            content: '余额',
+            content: formatMessage({ id: 'mine.balance' }),
             id: 4,
         },
         {
@@ -66,7 +68,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '余额宝',
+            content: formatMessage({ id: 'mine.yuebao' }),
             id: 5,
         },
         {
@@ -74,7 +76,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '花呗',
+            content: formatMessage({ id: 'mine.huabei' }),
             id: 6,
         },
         {
@@ -82,15 +84,15 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '余利宝',
+            content: formatMessage({ id: 'mine.yulibao' }),
             id: 7,
         },
         {
-            thumb: mineHhuankuan,
+            thumb: mineHuankuan,
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '银行卡',
+            content: formatMessage({ id: 'mine.bank' }),
             id: 8,
         },
     ],
@@ -100,7 +102,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '芝麻信用',
+            content: formatMessage({ id: 'mine.zhima' }),
             id: 9,
         },
         {
@@ -108,7 +110,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '蚂蚁保险',
+            content: formatMessage({ id: 'mine.insurance' }),
             id: 10,
         },
         {
@@ -116,7 +118,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '借呗',
+            content: formatMessage({ id: 'mine.jiebei' }),
             id: 11,
         },
         {
@@ -124,7 +126,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '网商银行',
+            content: formatMessage({ id: 'mine.mybank' }),
             id: 12,
         },
     ],
@@ -134,7 +136,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '支付宝公益',
+            content: formatMessage({ id: 'mine.alipaylove' }),
             id: 13,
         },
         {
@@ -142,7 +144,7 @@ const Map = {
             arrow: 'horizontal',
             extra: '',
             url: 'http://wwww.baidu.com',
-            content: '我的客服',
+            content: formatMessage({ id: 'mine.customer' }),
             id: 14,
         },
     ],

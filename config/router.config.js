@@ -41,13 +41,13 @@ export default [
                 title: '我的',
             },
             {
-                path: '/mine/seeting',
-                component: './Mine/Seeting',
+                path: '/mine/setting',
+                component: './Mine/Setting',
                 title: '设置',
             },
             {
-                path: '/mine/seeting/comm',
-                component: './Mine/Seeting/Common',
+                path: '/mine/setting/comm',
+                component: './Mine/Setting/Common',
                 title: '通用',
             },
             {

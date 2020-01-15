@@ -1,6 +1,6 @@
 import router from 'umi/router';
-
 import { getLocale, setLocale } from 'umi/locale';
+
 import { getLogout } from '@/services/module/user';
 import config from '@/services/config';
 import { delay } from '@/utils';

@@ -1,0 +1,18 @@
+export default {
+    'mine.settings': 'Settings',
+    'mine.membership': 'Membership',
+    'mine.merchant': 'Merchat Services',
+    'mine.transactions': 'Transactions',
+    'mine.totalassets': 'Total Assets',
+    'mine.balance': 'Balance',
+    'mine.yuebao': 'Yu E Bao',
+    'mine.huabei': 'Hua bei',
+    'mine.yulibao': 'Yu Li Bao',
+    'mine.bank': 'Bank Cards',
+    'mine.zhima': 'Zhima Credit',
+    'mine.insurance': 'Insurance',
+    'mine.jiebei': 'Jiebei',
+    'mine.mybank': 'MY bank',
+    'mine.alipaylove': 'Alipay Love',
+    'mine.customer': 'Customer Center',
+};

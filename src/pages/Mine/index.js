@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { WhiteSpace, List } from 'antd-mobile';
+import { formatMessage } from 'umi/locale';
 
 import PublicHeader from '@/components/PublicHeader';
 import ListMap from './map';
@@ -29,7 +30,10 @@ class Mine extends Component {
     render() {
         return (
             <div>
-                <PublicHeader title="我的" rightName="设置" />
+                <PublicHeader
+                    title={formatMessage({ id: 'menu.mine' })}
+                    rightName={formatMessage({ id: 'mine.settings' })}
+                />
                 <List>{this.renderItem(ListMap.member)}</List>
                 <WhiteSpace />
                 <List>{this.renderItem(ListMap.major)}</List>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NoticeBar, WhiteSpace, Icon } from 'antd-mobile';
+import { formatMessage } from 'umi/locale';
 
 import PublicHeader from '@/components/PublicHeader';
 
@@ -11,7 +12,7 @@ class Message extends Component {
     render() {
         return (
             <div>
-                <PublicHeader title="消息" />
+                <PublicHeader title={formatMessage({ id: 'menu.message' })} />
 
                 <WhiteSpace />
                 <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}>

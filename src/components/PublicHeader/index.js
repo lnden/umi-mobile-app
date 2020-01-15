@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { NavBar, Icon } from 'antd-mobile';
 import router from 'umi/router';
 import PropTypes from 'prop-types';
+import { formatMessage } from 'umi/locale';
 
 import BizIcon from '@/components/BizIcon';
 import styles from './index.less';
@@ -20,8 +21,8 @@ class PublicHeader extends PureComponent {
     handleClickRight = e => {
         const innerHtml = e.target.innerHTML;
         switch (innerHtml) {
-            case '设置':
-                router.push('/mine/seeting');
+            case formatMessage({ id: 'mine.settings' }):
+                router.push('/mine/setting');
                 break;
             default:
                 break;

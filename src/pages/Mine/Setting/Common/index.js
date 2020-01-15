@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, WhiteSpace, Picker, Card, Button } from 'antd-mobile';
+import { List, WhiteSpace, Picker, Card } from 'antd-mobile';
 import { formatMessage, FormattedMessage } from 'umi/locale';
 import { connect } from 'dva';
 import { createSelector } from 'reselect';
@@ -84,11 +84,11 @@ class Common extends Component {
         const { language, theme } = this.props;
         return (
             <div>
-                <PublicHeader title="通用" isBack />
+                <PublicHeader title={formatMessage({ id: 'mine.setting.general' })} isBack />
                 <WhiteSpace size="xl" />
                 <List>
                     <ListItem arrow="horizontal" onClick={() => this.handleClick('message')}>
-                        新消息通知
+                        {formatMessage({ id: 'mine.setting.common.notifications' })}
                     </ListItem>
                 </List>
                 <WhiteSpace size="xl" />
@@ -99,24 +99,27 @@ class Common extends Component {
                         cols={1}
                         onChange={this.handleChangeLang}
                     >
-                        <ListItem arrow="horizontal">多语言切换</ListItem>
+                        <ListItem arrow="horizontal">
+                            {formatMessage({ id: 'mine.setting.common.language' })}
+                        </ListItem>
                     </Picker>
                     <Picker data={colors} value={theme} cols={1} onChange={this.handleChangeColor}>
-                        <ListItem arrow="horizontal">主题设置</ListItem>
+                        <ListItem arrow="horizontal">
+                            {formatMessage({ id: 'mine.setting.common.theme' })}
+                        </ListItem>
                     </Picker>
                 </List>
                 <WhiteSpace size="xl" />
                 <Card>
-                    <CardHeader title={formatMessage({ id: 'mine.seeting.common.title' })} />
+                    <CardHeader title={formatMessage({ id: 'mine.setting.common.title' })} />
                     <CardBody>
-                        <div>{formatMessage({ id: 'mine.seeting.common.content' })}</div>
-                        <FormattedMessage id="mine.seeting.common.title" />
+                        <div>{formatMessage({ id: 'mine.setting.common.content' })}</div>
+                        <FormattedMessage id="mine.setting.common.title" />
                     </CardBody>
                     <CardFooter
-                        content={formatMessage({ id: 'mine.seeting.common.footer' })}
-                        extra={<div>{formatMessage({ id: 'mine.seeting.common.extra' })}</div>}
+                        content={formatMessage({ id: 'mine.setting.common.footer' })}
+                        extra={<div>{formatMessage({ id: 'mine.setting.common.extra' })}</div>}
                     />
-                    <Button type="primary">主色调按钮pimary</Button>
                 </Card>
             </div>
         );

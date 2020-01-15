@@ -1,0 +1,18 @@
+export default {
+    'mine.settings': '设置',
+    'mine.membership': '支付宝会员',
+    'mine.merchant': '商家服务',
+    'mine.transactions': '账单',
+    'mine.totalassets': '总资产',
+    'mine.balance': '余额',
+    'mine.yuebao': '余额宝',
+    'mine.huabei': '花呗',
+    'mine.yulibao': '余利宝',
+    'mine.bank': '银行卡',
+    'mine.zhima': '芝麻信用',
+    'mine.insurance': '蚂蚁保险',
+    'mine.jiebei': '借呗',
+    'mine.mybank': '网商银行',
+    'mine.alipaylove': '支付宝公益',
+    'mine.customer': '我的客服',
+};

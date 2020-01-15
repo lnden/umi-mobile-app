@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { WingBlank, WhiteSpace, Button } from 'antd-mobile';
+import { formatMessage } from 'umi/locale';
 
 import CustomCarousel from '@/components/CustomCarousel';
 import HeaderBar from './HeaderBar';
@@ -23,7 +24,7 @@ class Home extends Component {
         const { data } = this.state;
         return (
             <div>
-                <HeaderBar title="首页" />
+                <HeaderBar title={formatMessage({ id: 'menu.home' })} />
                 <WingBlank>
                     <CustomCarousel resourceList={data} />
                     <WhiteSpace />
